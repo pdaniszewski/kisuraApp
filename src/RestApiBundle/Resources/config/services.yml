@@ -1,0 +1,4 @@
+services:
+    rest_api.appointment.service:
+        class: RestApiBundle\Service\AppointmentService
+        arguments: ["@doctrine.orm.entity_manager"]
