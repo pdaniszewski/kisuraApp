@@ -9,7 +9,7 @@ Steps
     bin/console doctrine:database:create<br>
     bin/console doctrine:schema:update --force<br>
     bin/console doctrine:fixtures:load<br>
-3. under application root directory run small web server<br>
+3. under application directory 'web' run small web server<br>
     php -S localhost:8080
 4. test endpoints:<br>
     GET METHOD: curl -i 'http://localhost:8080/app_dev.php/api/v1/appointment/1'<br>
