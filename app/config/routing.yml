@@ -1,4 +1,4 @@
 rest_api:
     resource: "@RestApiBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /api/v1/
