@@ -16,3 +16,6 @@ Steps
     POST METHOD: curl -i -X POST -H "Accept: application/json" -H "Content-Type: application/json" --data '{"appointmentForm":{"phone":"03021253454", "stylist": "zxcvbnmasdfghjkl", "slot": "1", "customer": "asdfghjklqwertyu"}}' 'http://localhost:8080/app_dev.php/api/v1/appointment'<br>
     PUT METHOD: curl -i -X PUT -H "Accept: application/json" -H "Content-Type: application/json" --data '{"appointmentForm":{"phone":"03021253455", "stylist": "zxcvbnmasdfghjkl", "slot": "1", "customer": "asdfghjklqwertyu"}}' 'http://localhost:8080/app_dev.php/api/v1/appointment/1'<br>
     DELETE METHOD: curl -i -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" 'http://localhost:8080/app_dev.php/api/v1/appointment/1'<br>
+5. run phpunit through phing (to restore database each run of phpunit)
+    bin/phing phpunit
+    
