@@ -68,7 +68,7 @@ class AppointmentService
         $appointment->setModifiedAt($curDate);
         $appointment->setCreatedAt($curDate);
 
-        if ($form->isValid())
+        if ($form->getData())
         {
             $this->saveAppointment($form->getData());
             return $form->getData();
@@ -97,12 +97,13 @@ class AppointmentService
         {
             $this->saveAppointment($appointment);
             return $form->getData();
-        } else {
+        }
+        else {
             throw new BadRequestHttpException();
         }
     }
 
-    public function deleteAppointment(int $id)
+    public function deleteAppointment(int $id): bool
     {
         $appointment = $this->getAppointment($id);
 
@@ -111,16 +112,18 @@ class AppointmentService
         } else {
             throw new NotFoundHttpException('Appointment with id ' . $id . ' not found.');
         }
+
+        return true;
     }
 
-    private function saveAppointment(Appointment $appointment)
+    protected function saveAppointment(Appointment $appointment)
     {
         $em = $this->getEntityManager();
         $em->persist($appointment);
         $em->flush();
     }
 
-    private function removeAppointment(Appointment $appointment)
+    protected function removeAppointment(Appointment $appointment)
     {
         $em = $this->getEntityManager();
         $em->remove($appointment);

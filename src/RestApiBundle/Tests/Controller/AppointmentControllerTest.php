@@ -60,7 +60,7 @@ class AppointmentControllerTest extends WebTestCase
 
         $client->request(
             'PUT',
-            '/api/v1/appointment/1',
+            '/api/v1/appointment/2',
             [],
             [],
             [
@@ -102,7 +102,7 @@ class AppointmentControllerTest extends WebTestCase
 
         $client->request(
             'DELETE',
-            '/api/v1/appointment/1'
+            '/api/v1/appointment/2'
         );
 
         $statusCode = $client->getResponse()->getStatusCode();
